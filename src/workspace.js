@@ -8,7 +8,7 @@ import { sessionDir } from "@deepseek-ai/dsh-spill-local";
 import { trackTombstone } from "./tombstone.js";
 //#region lib/types/index.js
 /**
-* dsh-archive-manager 宿主侧归档会话管理。
+* @ggtec528/dsh-archive-manager 宿主侧归档会话管理。
 *
 * `deleteSession(sessionId)` 的顺序即语义：校验已知会话；实时会话先
 * flush 再 detach；等待投影缓存写入完成；移除归档标记和工作区记账；
@@ -164,7 +164,7 @@ const archivedSessionMetadataSchema = {
 */
 const ARCHIVE_MANAGER_INVOCATIONS = [
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/unarchiveSession",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSession",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "unarchiveSession",
@@ -177,13 +177,13 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 		}],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedSessionIds",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionIds",
 			schema: archivedSetSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	},
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/deleteSession",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteSession",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "deleteSession",
@@ -196,13 +196,13 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 		}],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#Deleted",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#Deleted",
 			schema: deletedSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	},
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "unarchiveSessions",
@@ -211,17 +211,17 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 			name: "target",
 			wire: "target",
 			source: "json",
-			codec: { mode: "strict", typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+			codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 		}],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#UnarchivedBatch",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#UnarchivedBatch",
 			schema: unarchivedBatchSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	},
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "archiveWorkspaceSessions",
@@ -234,13 +234,13 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 		}],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedWorkspaceBatch",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedWorkspaceBatch",
 			schema: archivedWorkspaceBatchSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	},
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "deleteArchivedSessions",
@@ -249,17 +249,17 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 			name: "target",
 			wire: "target",
 			source: "json",
-			codec: { mode: "strict", typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+			codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 		}],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#DeletedBatch",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#DeletedBatch",
 			schema: deletedBatchSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	},
 	{
-		id: "@michengai/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
+		id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
 		service: "workspaceRegistry",
 		namespace: "workspaceRegistry",
 		method: "archivedSessionMetadata",
@@ -267,14 +267,14 @@ const ARCHIVE_MANAGER_INVOCATIONS = [
 		parameters: [],
 		result: {
 			mode: "strict",
-			typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedSessionMetadata",
+			typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionMetadata",
 			schema: archivedSessionMetadataSchema
 		},
-		sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+		sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 	}
 ];
 const ARCHIVE_MANAGER_TYPERT = {
-	package: "@michengai/dsh-archive-manager",
+	package: "@ggtec528/dsh-archive-manager",
 	face: "host",
 	schemas: [],
 	model: { services: [], events: [], objects: [] },

@@ -81,7 +81,7 @@ const PACKAGE_MANIFEST = JSON.parse(await readFile(fileURLToPath(new URL("../pac
 
 await loadBundle(CLIENT_BUNDLE);
 const alphaRequests = [];
-const bundle = materialize("@michengai/dsh-archive-manager", {
+const bundle = materialize("@ggtec528/dsh-archive-manager", {
 	requests: alphaRequests,
 	staticModules: {
 		...statics,
@@ -89,7 +89,7 @@ const bundle = materialize("@michengai/dsh-archive-manager", {
 	}
 });
 const legacyRequests = [];
-const legacyBundle = materialize("@michengai/dsh-archive-manager", {
+const legacyBundle = materialize("@ggtec528/dsh-archive-manager", {
 	requests: legacyRequests,
 	staticModules: {
 		...statics,

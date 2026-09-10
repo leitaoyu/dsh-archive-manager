@@ -1,6 +1,6 @@
 //#region lib/types/index.js
 /**
- * @michengai/dsh-archive-manager 根宿主入口。
+ * @ggtec528/dsh-archive-manager 根宿主入口。
  *
  * 发布包是单个 DSH 插件。三个运行时模块通过根包子路径导出：
  *
@@ -17,8 +17,8 @@ const inject = ["webServer"];
 
 function apply(ctx) {
 	return registerPluginUpdater(ctx, {
-		endpoint: "/api/michengai/dsh-archive-manager/update",
-		packageName: "@michengai/dsh-archive-manager",
+		endpoint: "/api/ggtec528/dsh-archive-manager/update",
+		packageName: "@ggtec528/dsh-archive-manager",
 		manifestUrl: new URL("../package.json", import.meta.url),
 	});
 }

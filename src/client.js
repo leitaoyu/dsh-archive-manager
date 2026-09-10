@@ -1,7 +1,7 @@
 import { observePluginUpdate } from "./plugin-update-ui.js";
 
 window.__ModuleLoader__.load({
-	id: "@michengai/dsh-archive-manager",
+	id: "@ggtec528/dsh-archive-manager",
 	factory: (require) => {
 		var module = { exports: {} };
 		var exports = module.exports;
@@ -45,7 +45,7 @@ window.__ModuleLoader__.load({
 			element.append(svg);
 			return element;
 		}
-		//#region dsh-archive-manager: typert remote contribution + archived styling
+		//#region @ggtec528/dsh-archive-manager: typert remote contribution + archived styling
 		/**
 		* Strict codec shims for the archive-manager Remote descriptors. The
 		* client typert gateway requires `mode: "strict"` codecs whose schema
@@ -126,10 +126,10 @@ window.__ModuleLoader__.load({
 		* 调用走 typert gateway SRC 路径，不影响既有 `/api/workspace.*` 网关。
 		*/
 		const ARCHIVE_MANAGER_REMOTE = {
-			package: "@michengai/dsh-archive-manager",
+			package: "@ggtec528/dsh-archive-manager",
 			descriptors: [
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/unarchiveSession",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSession",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "unarchiveSession",
@@ -142,13 +142,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedSessionIds",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionIds",
 						schema: archivedSetSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/deleteSession",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteSession",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "deleteSession",
@@ -161,13 +161,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#Deleted",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#Deleted",
 						schema: deletedSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "unarchiveSessions",
@@ -176,17 +176,17 @@ window.__ModuleLoader__.load({
 						name: "target",
 						wire: "target",
 						source: "json",
-						codec: { mode: "strict", typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+						codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#UnarchivedBatch",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#UnarchivedBatch",
 						schema: unarchivedBatchSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "archiveWorkspaceSessions",
@@ -199,13 +199,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedWorkspaceBatch",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedWorkspaceBatch",
 						schema: archivedWorkspaceBatchSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "deleteArchivedSessions",
@@ -214,17 +214,17 @@ window.__ModuleLoader__.load({
 						name: "target",
 						wire: "target",
 						source: "json",
-						codec: { mode: "strict", typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+						codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#DeletedBatch",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#DeletedBatch",
 						schema: deletedBatchSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@michengai/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
+					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "archivedSessionMetadata",
@@ -232,10 +232,10 @@ window.__ModuleLoader__.load({
 					parameters: [],
 					result: {
 						mode: "strict",
-						typeSymbol: "@michengai/dsh-archive-manager/types#ArchivedSessionMetadata",
+						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionMetadata",
 						schema: archivedSessionMetadataSchema
 					},
-					sourceLocation: { file: "@michengai/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				}
 			]
 		};
@@ -247,14 +247,13 @@ window.__ModuleLoader__.load({
 			content: "dsham_archiveCardContent",
 			meta: "dsham_archiveCardMeta",
 			actions: "dsham_archiveCardActions",
-			unarchive: "dsham_archiveCardUnarchive",
-			delete: "dsham_archiveCardDelete"
+			unarchive: "dsham_archiveCardUnarchive"
 		};
-		const ARCHIVED_CSS = ".YDXeBa_sessionRow.dsham_archivedRow{box-sizing:border-box;cursor:default;min-height:64px;height:auto;background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;gap:12px;margin:8px 0;padding:10px 16px}.YDXeBa_sessionRow.dsham_archivedRow:hover{background:var(--dsw-alias-button-elevated-fill);border-color:var(--dsw-alias-border-l3)}.YDXeBa_searchResultRow.dsham_archivedRow{background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;margin:8px 0;padding:10px 16px}.dsham_archivedTitle{color:var(--dsw-alias-label-primary);font-weight:600}.dsham_archivedBadge{display:none}.dsham_archiveCardContent{min-width:0;flex:1;flex-direction:column;gap:2px;display:flex}.dsham_archiveCardMeta{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_time,.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_rowActions{display:none}.dsham_archiveCardActions{align-items:center;gap:12px;display:inline-flex}.dsham_archiveCardActions button{cursor:pointer;border:none;flex:none}.dsham_archiveCardDelete{width:28px;height:28px;color:var(--dsw-alias-label-tertiary);background:transparent;border-radius:8px;align-items:center;justify-content:center;display:inline-flex}.dsham_archiveCardDelete:hover{color:var(--dsw-alias-state-error-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_archiveCardUnarchive{height:32px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2)!important;border-radius:10px;padding:0 12px;font-size:13px;font-weight:600;line-height:20px}.dsham_archiveCardUnarchive:hover{background:var(--dsw-alias-interactive-bg-hover)}";
-		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("dsh-archive-manager/Archived.module.css") + "]") === null) {
+		const ARCHIVED_CSS = ".YDXeBa_sessionRow.dsham_archivedRow{box-sizing:border-box;cursor:default;min-height:64px;height:auto;background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;gap:12px;margin:8px 0;padding:10px 16px}.YDXeBa_sessionRow.dsham_archivedRow:hover{background:var(--dsw-alias-button-elevated-fill);border-color:var(--dsw-alias-border-l3)}.YDXeBa_searchResultRow.dsham_archivedRow{background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;margin:8px 0;padding:10px 16px}.dsham_archivedTitle{color:var(--dsw-alias-label-primary);font-weight:600}.dsham_archivedBadge{display:none}.dsham_archiveCardContent{min-width:0;flex:1;flex-direction:column;gap:2px;display:flex}.dsham_archiveCardMeta{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_time,.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_rowActions{display:none}.dsham_archiveCardActions{align-items:center;gap:12px;display:inline-flex}.dsham_archiveCardActions button{cursor:pointer;border:none;flex:none}.dsham_archiveCardUnarchive{height:32px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2)!important;border-radius:10px;padding:0 12px;font-size:13px;font-weight:600;line-height:20px}.dsham_archiveCardUnarchive:hover{background:var(--dsw-alias-interactive-bg-hover)}";
+		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@ggtec528/dsh-archive-manager/Archived.module.css") + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@michengai/dsh-archive-manager";
-			tag.dataset.pluginCss = "dsh-archive-manager/Archived.module.css";
+			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
+			tag.dataset.pluginCss = "@ggtec528/dsh-archive-manager/Archived.module.css";
 			tag.textContent = ARCHIVED_CSS;
 			document.head.appendChild(tag);
 		}
@@ -491,7 +490,7 @@ window.__ModuleLoader__.load({
 				children: [(0, react_jsx_runtime.jsx)("style", { children: ARCHIVE_SETTINGS_CSS + ARCHIVE_SETTINGS_BATCH_CSS + ARCHIVE_SETTINGS_EXTERNAL_LINK_CSS + ARCHIVE_SETTINGS_SELECTION_CSS + ARCHIVE_SETTINGS_DELETE_CONFIRM_CSS }), (0, react_jsx_runtime.jsxs)("header", {
 					className: "dsham_settingsHeader",
 					children: [(0, react_jsx_runtime.jsxs)("div", {
-					children: [(0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsTitleRow", children: [(0, react_jsx_runtime.jsx)("h2", { children: t("archives.title") }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsLinks", children: [(0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/MichengAI/dsh-archive-manager", target: "_blank", rel: "noreferrer", "aria-label": t("archives.viewProject"), children: [(0, react_jsx_runtime.jsx)(GithubMark16, {}), t("archives.viewProject")] }), (0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/MichengAI/dsh-archive-manager/issues", target: "_blank", rel: "noreferrer", "aria-label": t("archives.feedback"), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconListPenOutline16, {}), t("archives.feedback")] })] })] }), (0, react_jsx_runtime.jsx)("p", { className: "dsham_settingsIntro", children: t("archives.description") })]
+					children: [(0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsTitleRow", children: [(0, react_jsx_runtime.jsx)("h2", { children: t("archives.title") }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsLinks", children: [(0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/leitaoyu/dsh-archive-manager", target: "_blank", rel: "noreferrer", "aria-label": t("archives.viewProject"), children: [(0, react_jsx_runtime.jsx)(GithubMark16, {}), t("archives.viewProject")] }), (0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/leitaoyu/dsh-archive-manager/issues", target: "_blank", rel: "noreferrer", "aria-label": t("archives.feedback"), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconListPenOutline16, {}), t("archives.feedback")] })] })] }), (0, react_jsx_runtime.jsx)("p", { className: "dsham_settingsIntro", children: t("archives.description") })]
 					}), (0, react_jsx_runtime.jsxs)("div", {
 						className: "dsham_settingsHeaderActions",
 						children: [(0, react_jsx_runtime.jsx)("button", { type: "button", className: "dsham_settingsRestoreAll", disabled: busy || allBatchSessionIds.length === 0, onClick: () => onBatchUnarchive(allBatchTarget), children: t("archives.restoreAll") }), (0, react_jsx_runtime.jsxs)("button", { type: "button", className: "dsham_settingsDanger", disabled: busy || allBatchSessionIds.length === 0, onClick: () => setDeleteTarget({ kind: "batch", target: allBatchTarget, title: t("archives.allProjects"), count: allBatchSessionIds.length }), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {}), t("archives.deleteAll")] })]
@@ -889,7 +888,7 @@ window.__ModuleLoader__.load({
 		const tagId$2 = "@deepseek-ai/dsh-client-ui-workspace/Rows.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$2) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@michengai/dsh-archive-manager";
+			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId$2;
 			tag.textContent = css$2;
 			document.head.appendChild(tag);
@@ -1257,13 +1256,12 @@ window.__ModuleLoader__.load({
 		* @param props.onFork - fork a session at its last completed turn.
 		* @param props.onArchive - archive a session by id.
 		* @param props.onUnarchive - unarchive a session by id.
-		* @param props.onDeleteSession - request the delete-session confirmation.
 		* @param props.drag - optional draggable-row wiring.
 		* @param props.flat - omit the empty status slot in the hierarchy-free flat list.
 		* @param props.t - the browser root's locale seat.
 		* @returns the session row.
 		*/
-		function SessionNodeItem({ node, currentId, now, onOpen, onRename, onFork, onArchive, onUnarchive, onDeleteSession, drag, flat = false, t }) {
+		function SessionNodeItem({ node, currentId, now, onOpen, onRename, onFork, onArchive, onUnarchive, drag, flat = false, t }) {
 			const row = node;
 			const title = displayTitle(node, t);
 			const selected = node.id === currentId;
@@ -1276,12 +1274,6 @@ window.__ModuleLoader__.load({
 					id: "unarchive",
 					label: t("menu.unarchive"),
 					icon: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconArchiveOutline20, { size: 16 })
-				},
-				{
-					id: "delete-session",
-					label: t("menu.deleteSession"),
-					icon: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {}),
-					danger: true
 				}
 			] : [
 				{
@@ -1298,12 +1290,6 @@ window.__ModuleLoader__.load({
 					id: "archive",
 					label: t("menu.archiveSession"),
 					icon: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconArchiveOutline20, { size: 16 })
-				},
-				{
-					id: "delete-session",
-					label: t("menu.deleteSession"),
-					icon: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {}),
-					danger: true
 				}
 			];
 			return (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.HoverCard, {
@@ -1366,12 +1352,6 @@ window.__ModuleLoader__.load({
 							},
 							children: [(0, react_jsx_runtime.jsx)("button", {
 								type: "button",
-								className: ARCHIVED_CLASSES.delete,
-								"aria-label": t("menu.deleteSession"),
-								onClick: () => onDeleteSession(node.id, row.title),
-								children: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {})
-							}), (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
 								className: ARCHIVED_CLASSES.unarchive,
 								onClick: () => onUnarchive(node.id),
 								children: t("menu.unarchive")
@@ -1391,7 +1371,6 @@ window.__ModuleLoader__.load({
 									if (id === "fork") onFork(node.id);
 									if (id === "archive") onArchive(node.id);
 									if (id === "unarchive") onUnarchive(node.id);
-									if (id === "delete-session") onDeleteSession(node.id, row.title);
 								},
 								portal: true,
 								closeOnPointerLeave: true,
@@ -1426,7 +1405,7 @@ window.__ModuleLoader__.load({
 		const tagId$1 = "@deepseek-ai/dsh-client-ui-workspace/WorkspacePicker.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$1) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@michengai/dsh-archive-manager";
+			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId$1;
 			tag.textContent = css$1;
 			document.head.appendChild(tag);
@@ -1596,7 +1575,7 @@ window.__ModuleLoader__.load({
 		const tagId = "@deepseek-ai/dsh-client-ui-workspace/WorkspaceBrowser.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@michengai/dsh-archive-manager";
+			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId;
 			tag.textContent = css;
 			document.head.appendChild(tag);
@@ -1823,7 +1802,7 @@ window.__ModuleLoader__.load({
 			return e.clientY < rect.top + rect.height / 2 ? "before" : "after";
 		}
 		/** The scrolling session tree; unmounting drops the sessions subscription and expand-all state. */
-		function SessionTree({ useSessions, useSessionPendingInteraction, startSession, open, forkSession, workspaces, archivedSessionIds, showArchived, onRenameRequest, onArchiveRequest, onDeleteRequest, onSessionRename, onSessionArchive, onSessionUnarchive, onSessionDelete, insertWorkspaceBefore, insertSessionBefore, orderBy, groupExpansion, setGroupExpanded, sessionOrderByAccount, sessionUpdatedAtByAccount, syncSessionOrderAccount, setSessionOrder, t }) {
+		function SessionTree({ useSessions, useSessionPendingInteraction, startSession, open, forkSession, workspaces, archivedSessionIds, showArchived, onRenameRequest, onArchiveRequest, onDeleteRequest, onSessionRename, onSessionArchive, onSessionUnarchive, insertWorkspaceBefore, insertSessionBefore, orderBy, groupExpansion, setGroupExpanded, sessionOrderByAccount, sessionUpdatedAtByAccount, syncSessionOrderAccount, setSessionOrder, t }) {
 			const list = useSessions((s) => s);
 			const pendingInteractions = useSessionPendingInteraction((s) => s);
 			const current = list.current;
@@ -2053,7 +2032,6 @@ window.__ModuleLoader__.load({
 							},
 											onArchive: onSessionArchive,
 											onUnarchive: onSessionUnarchive,
-											onDeleteSession: onSessionDelete,
 											drag: {
 												start: () => {
 													sessionDropCommitted.current = false;
@@ -2110,7 +2088,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		/** The flat "In one list" body: every session is one draggable top-level row. */
-		function FlatList({ useSessions, useSessionPendingInteraction, open, forkSession, onSessionRename, onSessionArchive, onSessionUnarchive, onSessionDelete, archivedSessionIds, showArchived, orderBy, sessionOrderByAccount, sessionUpdatedAtByAccount, syncSessionOrderAccount, setSessionOrder, t }) {
+		function FlatList({ useSessions, useSessionPendingInteraction, open, forkSession, onSessionRename, onSessionArchive, onSessionUnarchive, archivedSessionIds, showArchived, orderBy, sessionOrderByAccount, sessionUpdatedAtByAccount, syncSessionOrderAccount, setSessionOrder, t }) {
 			const list = useSessions((s) => s);
 			const pendingInteractions = useSessionPendingInteraction((s) => s);
 			const baseRows = (0, react.useMemo)(() => deriveFlat(list, archivedSessionIds, pendingInteractions, showArchived), [
@@ -2199,7 +2177,6 @@ window.__ModuleLoader__.load({
 							},
 							onArchive: onSessionArchive,
 							onUnarchive: onSessionUnarchive,
-							onDeleteSession: onSessionDelete,
 							flat: true,
 							drag: {
 								start: () => {
@@ -2562,36 +2539,6 @@ window.__ModuleLoader__.load({
 					showArchivedToast(formatUnarchiveError(reason, t));
 				});
 			};
-			const [deleteSessionTarget, setDeleteSessionTarget] = (0, react.useState)(null);
-			const [deletingSession, setDeletingSession] = (0, react.useState)(false);
-			const [deleteSessionCommittedId, setDeleteSessionCommittedId] = (0, react.useState)(null);
-			const [deleteSessionError, setDeleteSessionError] = (0, react.useState)(null);
-			(0, react.useEffect)(() => {
-				if (deleteSessionCommittedId === null || archivedSet.has(deleteSessionCommittedId) || workspaces.some((workspace) => workspace.sessionIds.includes(deleteSessionCommittedId))) return;
-				setDeletingSession(false);
-				setDeleteSessionCommittedId(null);
-				setDeleteSessionTarget(null);
-			}, [deleteSessionCommittedId, archivedSet, workspaces]);
-			const closeDeleteSession = () => {
-				if (deletingSession) return;
-				setDeleteSessionTarget(null);
-				setDeleteSessionError(null);
-			};
-			const confirmDeleteSession = () => {
-				/* v8 ignore next -- the Modal is absent without a target and its button is disabled while deleting. */
-				if (deletingSession || deleteSessionTarget === null) return;
-				setDeletingSession(true);
-				setDeleteSessionError(null);
-				const rootId = deleteSessionTarget.sessionId;
-				deleteSession(rootId).then(() => {
-					setDeletingSession(false);
-					setDeleteSessionTarget(null);
-					setDeleteSessionCommittedId(rootId);
-				}).catch((reason) => {
-					setDeletingSession(false);
-					setDeleteSessionError(formatDeleteError(reason, t));
-				});
-			};
 			return (0, react_jsx_runtime.jsxs)("div", {
 				className: clsx(WorkspaceBrowser_module_css_default.root, !wide && WorkspaceBrowser_module_css_default.rail),
 				children: [
@@ -2747,10 +2694,6 @@ window.__ModuleLoader__.load({
 							onSessionRename,
 							onSessionArchive,
 							onSessionUnarchive,
-							onSessionDelete: (sessionId, title) => {
-								setDeleteSessionTarget({ sessionId, title });
-								setDeleteSessionError(null);
-							},
 							archivedSessionIds,
 							showArchived,
 							orderBy,
@@ -2765,10 +2708,6 @@ window.__ModuleLoader__.load({
 							onSessionRename,
 							onSessionArchive,
 							onSessionUnarchive,
-							onSessionDelete: (sessionId, title) => {
-								setDeleteSessionTarget({ sessionId, title });
-								setDeleteSessionError(null);
-							},
 							forkSession,
 							workspaces,
 							groupExpansion,
@@ -2961,34 +2900,6 @@ window.__ModuleLoader__.load({
 							children: archiveWorkspaceError
 						})]
 					}),
-					(0, react_jsx_runtime.jsxs)(_deepseek_ai_dsh_client_ui_primitives.Modal, {
-						open: deleteSessionTarget !== null,
-						onClose: closeDeleteSession,
-						closeLabel: t("close"),
-						title: t("deleteSession.title"),
-						...deleteSessionTarget === null ? {} : { description: t("deleteSession.desc", { name: deleteSessionTarget.title }) },
-						footer: (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.Button, {
-							variant: "outline",
-							disabled: deletingSession,
-							onClick: closeDeleteSession,
-							children: t("cancel")
-						}), (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.Button, {
-							variant: "outline",
-							className: WorkspaceBrowser_module_css_default.deleteAction,
-							disabled: deletingSession,
-							onClick: confirmDeleteSession,
-							children: t("deleteSession.title")
-						})] }),
-						children: [deletingSession && (0, react_jsx_runtime.jsx)("div", {
-							className: WorkspaceBrowser_module_css_default.deleteStatus,
-							role: "status",
-							children: t("deleteSession.pending")
-						}), deleteSessionError !== null && (0, react_jsx_runtime.jsx)("div", {
-							className: WorkspaceBrowser_module_css_default.renameError,
-							role: "alert",
-							children: deleteSessionError
-						})]
-					}),
 					archivedToast !== null && (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.Toast, {
 						key: archivedToast.seq,
 						text: archivedToast.text,
@@ -3000,7 +2911,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		//#endregion
-		//#region dsh-archive-manager: settings section
+		//#region @ggtec528/dsh-archive-manager: settings section
 		const ARCHIVE_SETTINGS_CSS = ".dsham_settings{container-type:inline-size;min-width:0;box-sizing:border-box;width:min(100%,760px);margin:0 auto;padding:0 0 32px;color:var(--dsw-alias-label-primary)}.dsham_settingsHeader{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-bottom:16px}.dsham_settings h2{margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.4px;white-space:nowrap}.dsham_settingsIntro{margin:12px 0 0;max-width:42em;color:var(--dsw-alias-label-tertiary);font-size:14px;line-height:22px}.dsham_settingsDanger{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;color:var(--dsw-alias-state-error-primary);background:transparent;border:1px solid var(--dsw-alias-state-error-primary);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsDanger:hover{background:color-mix(in srgb,var(--dsw-alias-state-error-primary) 20%,transparent)}.dsham_settingsToolbar{display:flex;gap:8px;margin-bottom:16px}.dsham_settingsSearch{display:flex;align-items:center;gap:8px;min-width:0;flex:1;height:32px;padding:0 12px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-3,var(--dsw-alias-button-elevated-fill));border:1px solid var(--dsw-alias-border-l2);border-radius:8px}.dsham_settingsSearch:focus-within{border-color:var(--dsw-alias-label-tertiary)}.dsham_settingsSearch input{width:100%;min-width:0;padding:0;color:var(--dsw-alias-label-primary);background:transparent;border:0;outline:0;font:inherit;font-size:12px}.dsham_settingsSearch input::placeholder{color:var(--dsw-alias-label-tertiary)}.dsham_settingsFilter{position:relative;min-width:168px;flex:none}.dsham_selectTrigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:32px;padding:0 10px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-3,var(--dsw-alias-button-elevated-fill));border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;line-height:20px;text-align:left}.dsham_selectTrigger:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_selectTrigger:focus-visible{outline:2px solid var(--dsw-alias-state-success-primary);outline-offset:2px}.dsham_selectTrigger[aria-expanded='true']{border-color:var(--dsw-alias-state-success-primary)}.dsham_selectValue{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsham_selectCaret{flex:none;width:12px;height:12px;color:var(--dsw-alias-label-tertiary)}.dsham_selectMenu{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:30;box-sizing:border-box;min-width:100%;max-height:280px;overflow:auto;padding:4px;border:1px solid var(--dsw-alias-border-l2);border-radius:10px;background:var(--dsw-specific-menu,var(--dsw-alias-bg-layer-2));box-shadow:var(--dsw-shadow-lv3)}.dsham_selectOption{box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:32px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:20px;text-align:left;cursor:pointer}.dsham_selectOption:hover,.dsham_selectOption[data-active='true']{background:var(--dsw-alias-interactive-bg-hover)}.dsham_selectOption[aria-selected='true']{color:var(--dsw-alias-state-success-primary)}.dsham_settingsGroup{margin:0 0 20px}.dsham_settingsGroupHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}.dsham_settingsGroupTitle{display:flex;align-items:center;gap:8px;min-width:0;margin:0;color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600}.dsham_settingsGroupTitle svg{flex:none;color:var(--dsw-alias-label-secondary)}.dsham_settingsCount{flex:none;color:var(--dsw-alias-label-tertiary);font-size:12px}.dsham_settingsList{overflow:hidden;border:1px solid var(--dsw-alias-border-l2);border-radius:12px;background:var(--dsw-alias-bg-layer-2,var(--dsw-alias-button-elevated-fill))}.dsham_settingsRow{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 16px;border-bottom:1px solid var(--dsw-alias-border-l2)}.dsham_settingsRow:last-child{border-bottom:0}.dsham_settingsContent{min-width:0;flex:1}.dsham_settingsTitle{overflow:hidden;color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600;line-height:18px;text-overflow:ellipsis;white-space:nowrap}.dsham_settingsMeta{margin-top:2px;color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:16px}.dsham_settingsActions{display:flex;align-items:center;gap:8px}.dsham_settingsAction{min-height:32px;padding:0 12px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsAction:hover{filter:brightness(1.12)}.dsham_settingsDelete{display:flex;align-items:center;justify-content:center;width:28px;height:28px;color:var(--dsw-alias-label-tertiary);background:transparent;border:0;border-radius:8px;cursor:pointer}.dsham_settingsDelete:hover{color:var(--dsw-alias-state-error-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsEmpty{padding:28px 8px;color:var(--dsw-alias-label-secondary);text-align:center}.dsham_settingsError{margin-top:10px;color:var(--dsw-alias-state-error-primary);font-size:12px}@container(max-width:520px){.dsham_settingsHeader{margin-bottom:16px}.dsham_settingsToolbar{flex-wrap:wrap;margin-bottom:28px}.dsham_settingsSearch{flex-basis:100%}.dsham_settingsFilter{flex:1;min-width:0}.dsham_settingsGroup{margin-bottom:32px}.dsham_settingsRow{padding:10px 12px}.dsham_settingsActions{gap:4px}}";
 		const ARCHIVE_SETTINGS_BATCH_CSS = ".dsham_settingsHeaderActions,.dsham_settingsGroupMeta{display:flex;align-items:center;gap:8px;flex:none;flex-wrap:wrap}.dsham_settingsRestoreAll{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsRestoreAll:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsRestoreAll:disabled,.dsham_settingsDanger:disabled,.dsham_settingsGroupMenu:disabled{cursor:not-allowed;opacity:.5}.dsham_settingsGroupMenu{display:flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;color:var(--dsw-alias-label-tertiary);background:transparent;border:0;border-radius:8px;cursor:pointer}.dsham_settingsGroupMenu:hover{color:var(--dsw-alias-label-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsStatus{margin-top:10px;color:var(--dsw-alias-label-secondary);font-size:12px}@media(max-width:720px){.dsham_settingsHeader{flex-direction:column}.dsham_settingsHeaderActions{align-self:flex-start}}";
 		const ARCHIVE_SETTINGS_EXTERNAL_LINK_CSS = ".dsham_settingsTitleRow{display:flex;align-items:center;gap:8px 12px;min-width:0;flex-wrap:wrap}.dsham_settingsLinks{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.dsham_settingsExternalLink{display:inline-flex;align-items:center;gap:5px;min-height:28px;padding:0 8px;color:var(--dsw-alias-label-secondary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:7px;font-size:12px;font-weight:500;line-height:18px;text-decoration:none;white-space:nowrap}.dsham_settingsExternalLink:hover{color:var(--dsw-alias-label-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsExternalLink:focus-visible{outline:2px solid var(--dsw-alias-state-success-primary);outline-offset:2px}.dsham_settingsExternalLink svg{flex:none}@media(max-width:720px){.dsham_settingsTitleRow{flex-wrap:wrap}}";
@@ -3008,10 +2919,10 @@ window.__ModuleLoader__.load({
 		const ARCHIVE_WORKSPACE_CONFIRM_CSS = ".dsham_archiveWorkspaceConfirm{color:var(--dsw-alias-state-error-primary)!important;background:transparent!important;border-color:var(--dsw-alias-state-error-primary)!important}.dsham_archiveWorkspaceConfirm:hover:not(:disabled){background:color-mix(in srgb,var(--dsw-alias-state-error-primary) 20%,transparent)!important}.dsham_archiveWorkspaceConfirm:focus-visible{outline:2px solid var(--dsw-alias-state-error-secondary);outline-offset:2px}.dsham_archiveWorkspaceConfirm:disabled{cursor:not-allowed;opacity:.5}";
 		const ARCHIVE_SETTINGS_SELECTION_CSS = ".dsham_settingsSelection{display:flex;align-items:center;gap:10px;min-height:40px;margin:-8px 0 16px;padding:4px 10px;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;background:var(--dsw-alias-bg-layer-2,var(--dsw-alias-button-elevated-fill))}.dsham_settingsSelectionToggle{display:inline-flex;align-items:center;gap:8px;min-width:0;color:var(--dsw-alias-label-primary);font-size:13px;cursor:pointer}.dsham_settingsCheckbox{width:16px;height:16px;margin:0;accent-color:#3b82f6}.dsham_settingsSelectionCount{margin-right:auto;color:var(--dsw-alias-label-tertiary);font-size:12px}.dsham_settingsSelectionAction{min-height:28px;padding:0 10px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:7px;cursor:pointer;font:inherit;font-size:12px;font-weight:500}.dsham_settingsSelectionAction:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsSelectionDelete{color:var(--dsw-alias-state-error-primary);border-color:var(--dsw-alias-state-error-primary)}.dsham_settingsSelectionAction:disabled{cursor:not-allowed;opacity:.5}@media(max-width:720px){.dsham_settingsSelection{flex-wrap:wrap}.dsham_settingsSelectionCount{margin-right:0}.dsham_settingsSelectionAction{margin-left:auto}.dsham_settingsSelectionAction+.dsham_settingsSelectionAction{margin-left:-2px}}";
 		const ARCHIVE_SETTINGS_LAYOUT_OVERRIDE = ".dsham_settings{margin:0 auto!important}@media(max-width:720px){.dsham_settings{margin:0 auto!important}}";
-		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("dsh-archive-manager/ArchiveSettings.layout.css") + "]") === null) {
+		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@ggtec528/dsh-archive-manager/ArchiveSettings.layout.css") + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@michengai/dsh-archive-manager";
-			tag.dataset.pluginCss = "dsh-archive-manager/ArchiveSettings.layout.css";
+			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
+			tag.dataset.pluginCss = "@ggtec528/dsh-archive-manager/ArchiveSettings.layout.css";
 			tag.textContent = ARCHIVE_SETTINGS_LAYOUT_OVERRIDE + ARCHIVE_SETTINGS_DELETE_CONFIRM_CSS + ARCHIVE_WORKSPACE_CONFIRM_CSS;
 			document.head.appendChild(tag);
 		}
@@ -3448,7 +3359,7 @@ window.__ModuleLoader__.load({
 			return (0, react_jsx_runtime.jsxs)("section", {
 				className: "dsham_settings",
 				"aria-label": t("archives.title"),
-				children: [(0, react_jsx_runtime.jsx)("style", { children: ARCHIVE_SETTINGS_CSS + ARCHIVE_SETTINGS_BATCH_CSS + ARCHIVE_SETTINGS_EXTERNAL_LINK_CSS }), (0, react_jsx_runtime.jsxs)("header", { className: "dsham_settingsHeader", children: [(0, react_jsx_runtime.jsxs)("div", { children: [(0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsTitleRow", children: [(0, react_jsx_runtime.jsx)("h2", { children: t("archives.title") }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsLinks", children: [(0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/MichengAI/dsh-archive-manager", target: "_blank", rel: "noreferrer", "aria-label": t("archives.viewProject"), children: [(0, react_jsx_runtime.jsx)(GithubMark16, {}), t("archives.viewProject")] }), (0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/MichengAI/dsh-archive-manager/issues", target: "_blank", rel: "noreferrer", "aria-label": t("archives.feedback"), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconListPenOutline16, {}), t("archives.feedback")] })] })] }), (0, react_jsx_runtime.jsx)("p", { className: "dsham_settingsIntro", children: t("archives.description") })] }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsHeaderActions", children: [(0, react_jsx_runtime.jsx)("button", { type: "button", className: "dsham_settingsRestoreAll", disabled: busy || allBatchSessionIds.length === 0, onClick: () => onBatchUnarchive(allBatchTarget), children: t("archives.restoreAll") }), (0, react_jsx_runtime.jsxs)("button", { type: "button", className: "dsham_settingsDanger", disabled: busy || allBatchSessionIds.length === 0, onClick: () => setDeleteTarget({ kind: "batch", target: allBatchTarget, title: t("archives.allProjects"), count: allBatchSessionIds.length }), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {}), t("archives.deleteAll")] })] })] }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsToolbar", children: [(0, react_jsx_runtime.jsxs)("label", { className: "dsham_settingsSearch", children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconSearchOutline16, {}), (0, react_jsx_runtime.jsx)("input", { type: "search", value: query, onChange: (event) => setQuery(event.target.value), placeholder: t("archives.searchPlaceholder"), "aria-label": t("archives.searchPlaceholder") })] }), (0, react_jsx_runtime.jsx)(ArchiveProjectSelect, { id: "dsham-sort-filter", value: sortBy, options: [{ value: "updated", label: t("archives.sortUpdated") }, { value: "created", label: t("archives.sortCreated") }, { value: "alphabetical", label: t("archives.sortAlphabetical") }], onChange: setSortBy, "aria-label": t("archives.sortBy") }), (0, react_jsx_runtime.jsx)(ArchiveProjectSelect, { id: "dsham-project-filter", value: project, options: [{ value: "all", label: t("archives.allProjects") }, ...sortedGroups.map((group) => ({ value: group.key, label: group.title }))], onChange: setProject, "aria-label": t("archives.projectFilter") })] }), groups.length === 0 ? (0, react_jsx_runtime.jsx)("div", { className: "dsham_settingsEmpty", children: t("archives.empty") }) : filteredGroups.length === 0 ? (0, react_jsx_runtime.jsx)("div", { className: "dsham_settingsEmpty", children: t("archives.emptyFiltered") }) : filteredGroups.map((group) => {
+				children: [(0, react_jsx_runtime.jsx)("style", { children: ARCHIVE_SETTINGS_CSS + ARCHIVE_SETTINGS_BATCH_CSS + ARCHIVE_SETTINGS_EXTERNAL_LINK_CSS }), (0, react_jsx_runtime.jsxs)("header", { className: "dsham_settingsHeader", children: [(0, react_jsx_runtime.jsxs)("div", { children: [(0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsTitleRow", children: [(0, react_jsx_runtime.jsx)("h2", { children: t("archives.title") }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsLinks", children: [(0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/leitaoyu/dsh-archive-manager", target: "_blank", rel: "noreferrer", "aria-label": t("archives.viewProject"), children: [(0, react_jsx_runtime.jsx)(GithubMark16, {}), t("archives.viewProject")] }), (0, react_jsx_runtime.jsxs)("a", { className: "dsham_settingsExternalLink", href: "https://github.com/leitaoyu/dsh-archive-manager/issues", target: "_blank", rel: "noreferrer", "aria-label": t("archives.feedback"), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconListPenOutline16, {}), t("archives.feedback")] })] })] }), (0, react_jsx_runtime.jsx)("p", { className: "dsham_settingsIntro", children: t("archives.description") })] }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsHeaderActions", children: [(0, react_jsx_runtime.jsx)("button", { type: "button", className: "dsham_settingsRestoreAll", disabled: busy || allBatchSessionIds.length === 0, onClick: () => onBatchUnarchive(allBatchTarget), children: t("archives.restoreAll") }), (0, react_jsx_runtime.jsxs)("button", { type: "button", className: "dsham_settingsDanger", disabled: busy || allBatchSessionIds.length === 0, onClick: () => setDeleteTarget({ kind: "batch", target: allBatchTarget, title: t("archives.allProjects"), count: allBatchSessionIds.length }), children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconTrashOutline16, {}), t("archives.deleteAll")] })] })] }), (0, react_jsx_runtime.jsxs)("div", { className: "dsham_settingsToolbar", children: [(0, react_jsx_runtime.jsxs)("label", { className: "dsham_settingsSearch", children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconSearchOutline16, {}), (0, react_jsx_runtime.jsx)("input", { type: "search", value: query, onChange: (event) => setQuery(event.target.value), placeholder: t("archives.searchPlaceholder"), "aria-label": t("archives.searchPlaceholder") })] }), (0, react_jsx_runtime.jsx)(ArchiveProjectSelect, { id: "dsham-sort-filter", value: sortBy, options: [{ value: "updated", label: t("archives.sortUpdated") }, { value: "created", label: t("archives.sortCreated") }, { value: "alphabetical", label: t("archives.sortAlphabetical") }], onChange: setSortBy, "aria-label": t("archives.sortBy") }), (0, react_jsx_runtime.jsx)(ArchiveProjectSelect, { id: "dsham-project-filter", value: project, options: [{ value: "all", label: t("archives.allProjects") }, ...sortedGroups.map((group) => ({ value: group.key, label: group.title }))], onChange: setProject, "aria-label": t("archives.projectFilter") })] }), groups.length === 0 ? (0, react_jsx_runtime.jsx)("div", { className: "dsham_settingsEmpty", children: t("archives.empty") }) : filteredGroups.length === 0 ? (0, react_jsx_runtime.jsx)("div", { className: "dsham_settingsEmpty", children: t("archives.emptyFiltered") }) : filteredGroups.map((group) => {
 					const target = archivedBatchTargetForGroup(group.key);
 					const count = deriveArchivedBatchIds(workspaceState.archivedSessionIds, workspaceState.items, target).length;
 					return (0, react_jsx_runtime.jsxs)("section", {
@@ -3984,8 +3895,8 @@ window.__ModuleLoader__.load({
 				en
 			}), "dsh-archive-manager: dictionaries");
 			ctx.effect(() => observePluginUpdate({
-				endpoint: "/api/michengai/dsh-archive-manager/update",
-				packageName: "@michengai/dsh-archive-manager",
+				endpoint: "/api/ggtec528/dsh-archive-manager/update",
+				packageName: "@ggtec528/dsh-archive-manager",
 				titleRowSelector: ".dsham_settingsTitleRow",
 				linksSelector: ".dsham_settingsLinks",
 				zhName: "归档会话",

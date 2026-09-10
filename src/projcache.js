@@ -212,7 +212,7 @@ async function importPreviousProjectionCache(ctx, target) {
 }
 //#region lib/types/index.js
 /**
- * dsh-archive-manager projcache 半边。
+ * @ggtec528/dsh-archive-manager projcache 半边。
  *
  * `ArchiveProjectionCache` 继承上游 `SessionProjectionCache`，保留服务名
  * `sessionProjectionCache` 与 fail-soft 写路径，但写入独立、路径安全的

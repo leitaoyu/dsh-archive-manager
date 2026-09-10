@@ -11,13 +11,15 @@
   [English](README.md) · [更新日志](CHANGELOG.zh-CN.md) · [Apache-2.0](LICENSE)
 
   [![许可证：Apache-2.0](https://img.shields.io/badge/许可证-Apache--2.0-blue.svg)](LICENSE)
-  [![npm package](https://img.shields.io/npm/v/%40michengai%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![npm 下载量](https://img.shields.io/npm/dt/%40michengai%2Fdsh-archive-manager.svg?label=npm%20%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/MichengAI/dsh-archive-manager)
+  [![npm package](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm 下载量](https://img.shields.io/npm/dt/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/leitaoyu/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
 </div>
 
 > DSH Archive Manager 是社区维护的 DeepSeek Harness（DSH）插件，并非 DeepSeek AI 官方产品。
+>
+> **本项目是 [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager) 的复刻分支**，已基于上游 `0.1.36` 重建。本分支移除了侧栏的「删除会话」入口，避免误删；永久删除仍可在「设置 → 归档会话」中完成。其余功能与上游保持一致。
 
 ## 功能概览
 
@@ -26,13 +28,10 @@
 - **收起已完成的任务**：归档单条聊天，也可归档整个工作区的未归档聊天。
 - **快速找回历史**：在「设置 → 归档会话」搜索标题、按项目筛选，或按时间和标题排序。
 - **恢复继续工作**：恢复单条会话、整个项目或全部归档会话。
-- **按需清理记录**：支持单条或批量永久删除，执行前会要求确认。**永久删除无法撤销。**
+- **按需清理记录**：在「设置 → 归档会话」中单条或批量永久删除，执行前会要求确认。**永久删除无法撤销。**
+- **与本分支的差异**：侧栏会话菜单和归档卡片不再提供「删除会话」，因此在侧栏误点不会销毁会话；永久删除仍保留在「设置 → 归档会话」。
 
 ## 界面预览
-
-在侧栏会话菜单中选择「归档会话」：
-
-![从会话菜单归档会话](assets/screenshots/archive-session-menu.png)
 
 在「设置 → 归档会话」中搜索、排序、按项目筛选、取消归档或永久删除：
 
@@ -48,14 +47,14 @@
 | [IM Connect](https://github.com/MichengAI/dsh-im-connect) | 从微信、飞书、钉钉等消息平台下任务、收回复 |
 | [Automation](https://github.com/MichengAI/dsh-automation) | 按计划执行任务，查看每次运行的结果 |
 | [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) | 统一查找、启停、创建和导入本机技能 |
-| [Archive Manager](https://github.com/MichengAI/dsh-archive-manager) | 搜索、恢复或清理已归档会话 |
+| [Archive Manager](https://github.com/leitaoyu/dsh-archive-manager) | 搜索、恢复或清理已归档会话 |
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | 按任务选择并召唤专业角色 |
 | [BTW](https://github.com/MichengAI/dsh-btw) | 在当前上下文中临时旁问，不打断主任务 |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | 用 /simplify 整理 Git 改动范围内的代码 |
 
 ## 前置条件
 
-- 当前源码已适配 DeepSeek Harness `0.1.5-rc.1`，并保留下表中的旧版兼容路径；已随插件 `0.1.35` 发布到 npm。后续版本需另行验证。
+- 当前源码已适配 DeepSeek Harness `0.1.5-rc.1`，并保留下表中的旧版兼容路径；本机实际安装的 `0.1.2-rc.1` 宿主同样包含在该矩阵内。
 
 - 已可正常运行 DeepSeek Harness Web，且可在 PowerShell 中使用 `dsh`。
 - 以下示例使用 `web` profile；请替换为实际目标 profile。
@@ -76,12 +75,14 @@ DSH peer 依赖仅接受 `0.1.0-rc.8 || 0.1.1-rc.2 || 0.1.2-rc.1 || 0.1.5-rc.1`�
 
 | DSH | Cordis | 自动回归 |
 | --- | --- | --- |
-| `0.1.0-rc.8` | `4.0.1` | 153 项通过 |
-| `0.1.1-rc.2` | `4.0.1` | 153 项通过，另含旧缓存迁移验证 |
-| `0.1.2-rc.1` | `4.0.2` | 153 项通过 |
-| `0.1.5-rc.1` | `4.0.2` | 156 项通过 |
+| `0.1.0-rc.8` | `4.0.1` | 154 项通过 |
+| `0.1.1-rc.2` | `4.0.1` | 154 项通过，另含旧缓存迁移验证 |
+| `0.1.2-rc.1` | `4.0.2` | 154 项通过 |
+| `0.1.5-rc.1` | `4.0.2` | 本地依赖集下 151 项通过，详见下方说明 |
 
-覆盖新版工作区导航、全局面板退出、异步导航取消、侧栏接线、peer 版本接纳、客户端 Remote、归档/恢复、真实 JSONL/Zstandard 删除与子会话级联、删除后重新查询及重新打开存储。验证环境为 Windows / Node.js 24。另已在隔离 DSH 0.1.5-rc.1 Web Profile 中完成真实浏览器验收：包安装、归档恢复、取消与确认删除、子会话级联、跨筛选批量删除、工作区选择、全局面板返回会话、新建与分叉、正文搜索和重启持久性均通过。正文搜索需开启宿主查询数据库；本次将隔离 Profile 的 `openAt: never` 改为 `startup` 后验证通过。其余三个版本仅完成隔离自动测试，未逐版执行浏览器验收；未调用外部模型。新版存储夹具仅隔离上游无法在 Windows 加载的 POSIX `fs-ext` 导入，实际文件操作与 Windows 原生锁仍使用官方实现。
+上表数量为本复刻分支在 Linux / Node.js 24 下实测。隔离的 `0.1.5-rc.1` 档目前无法完成自身的 `npm install`：`@deepseek-ai/dsh-session-query@0.1.5-rc.1` 会接受更新的 `dsh-session-title@0.1.5-rc.2`，而它的 peer 链（`dsh-agent`、`dsh-system-prompt`、`dsh-invariants` 要求 `^0.1.5-rc.2`）与固定的 `0.1.5-rc.1` 组合冲突，npm 在运行任何插件代码前即以 `ERESOLVE` 中止。该现象在未改动的上游 `main` 上同样复现（两者依赖声明完全一致），属于 registry 漂移而非插件回归。改用冻结锁文件安装同一组合（`pnpm install --frozen-lockfile`）会把整个 `@deepseek-ai/dsh-*` 依赖树解析为精确的 `0.1.5-rc.1`，再执行 `pnpm test`，即上表 `0.1.5-rc.1` 一行的来源。
+
+覆盖新版工作区导航、全局面板退出、异步导航取消、侧栏接线、peer 版本接纳、客户端 Remote、归档/恢复、真实 JSONL/Zstandard 删除与子会话级联、删除后重新查询及重新打开存储。上游的验证环境为 Windows / Node.js 24，并已在隔离 DSH 0.1.5-rc.1 Web Profile 中完成真实浏览器验收：包安装、归档恢复、取消与确认删除、子会话级联、跨筛选批量删除、工作区选择、全局面板返回会话、新建与分叉、正文搜索和重启持久性均通过。正文搜索需开启宿主查询数据库；上游将隔离 Profile 的 `openAt: never` 改为 `startup` 后验证通过。本复刻分支只重跑了自动测试，未重复浏览器验收；其余三个版本仅完成隔离自动测试。未调用外部模型。新版存储夹具仅隔离上游无法在 Windows 加载的 POSIX `fs-ext` 导入，实际文件操作与 Windows 原生锁仍使用官方实现。
 
 以下安装命令使用官方 npm 源。
 
@@ -90,7 +91,7 @@ DSH peer 依赖仅接受 `0.1.0-rc.8 || 0.1.1-rc.2 || 0.1.2-rc.1 || 0.1.5-rc.1`�
 把下面这段话发给任意能够执行本机终端命令的 Agent。将 `web` 替换为实际使用的 profile；安装完成后，在 DSH 中使用本插件。
 
 ```text
-请将 DSH 插件 @michengai/dsh-archive-manager 安装到本机 web profile，执行：dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/。安装后执行 dsh --profile web --dump-config，确认配置包含 workspace-archive-manager, ui-workspace-archive-manager，并告诉我如何重新加载 DSH 和开始使用。
+请将 DSH 插件 @ggtec528/dsh-archive-manager 安装到本机 web profile，执行：dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/。安装后执行 dsh --profile web --dump-config，确认配置包含 workspace-archive-manager, ui-workspace-archive-manager，并告诉我如何重新加载 DSH 和开始使用。
 ```
 
 ### 从官方 npm 安装最新版
@@ -100,7 +101,7 @@ DSH peer 依赖仅接受 `0.1.0-rc.8 || 0.1.1-rc.2 || 0.1.2-rc.1 || 0.1.5-rc.1`�
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
+dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
 dsh --profile web --dump-config
 ```
 
@@ -119,13 +120,13 @@ dsh --profile web --dump-config
 3. 按标题搜索，按更新时间、创建时间或标题排序，或按项目筛选列表。
 4. 点击「取消归档」恢复单个会话，或在顶部点击「全部恢复」。
 5. 打开项目标题右侧菜单，可恢复或删除该项目的全部已归档聊天。
-6. 点击删除图标永久移除单个会话；删除前确认提示。**删除无法撤销。**
+6. 要永久移除单个会话，请打开「设置 → 归档会话」，找到该会话后点击删除图标；删除前有确认提示。**删除无法撤销。** 本分支的侧栏不再提供删除入口。
 
 安装或升级后找不到入口时，重启 DSH Web 并硬刷新浏览器；入口位于「设置」中，连接器之后。
 
 ## 数据处理边界
 
-- 删除操作始终需要确认。
+- 删除操作始终需要确认，且唯一入口是「设置 → 归档会话」。
 - 删除会移除工作区记录、归档标记和投影缓存。官方 JSONL 后端在目录布局校验通过后，会一并删除会话专属目录及其中的附件等内容；其他后端或未知布局仅删除定位到的转录工件，不删除其父目录。
 - 不清理项目分组目录或存储根目录。官方布局的项目/会话目录若为符号链接或 Windows junction，会拒绝删除并保留可重试状态。
 - 布局校验优先使用官方后端初始化时确定的绝对根路径，相对路径配置不再受宿主工作目录变化影响；若无法取得该字段，则只接受绝对路径配置。官方 JSONL 布局校验失败时，会记录包含会话 ID 和工件路径的警告，再降级为仅删除工件。
@@ -142,8 +143,7 @@ dsh --profile web --dump-config
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-Set-Location D:\Repository\deepseek-harness-plugin
-git clone https://github.com/MichengAI/dsh-archive-manager.git
+git clone https://github.com/leitaoyu/dsh-archive-manager.git
 Set-Location .\dsh-archive-manager
 pnpm install --frozen-lockfile
 pnpm build
@@ -183,6 +183,10 @@ pnpm verify
 
 `prepublishOnly` 会在发布前执行完整验证，并确认提交的 `lib` 与当前 `src` 构建结果一致。
 
+## 致谢
+
+感谢上游项目 [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager)，本分支基于它复刻。
+
 ## 许可证
 
 本项目采用 [Apache License 2.0](LICENSE)。
@@ -193,4 +197,4 @@ pnpm verify
 
 恢复已发布版本时，流程先校验 npm 包名、版本和标签提交：一致则跳过依赖安装、完整构建和再次发布，仅补同步 Release；未发布的旧标签仍需满足原标签的冷却策略，不能通过重试绕过。精确版本及 latest 传播分别最多等待两分钟，latest 落后时不提前创建非 Latest Release。
 
-已推送的旧标签不会因 main 更新而重新触发。推送工作流更新后，可手动运行 `publish.yml`，选择 main 并填写原标签（例如 `v0.1.35`）；无需移动或重新创建标签。
+已推送的旧标签不会因 main 更新而重新触发。推送工作流更新后，可手动运行 `publish.yml`，选择 main 并填写原标签（例如 `v0.1.18`）；无需移动或重新创建标签。

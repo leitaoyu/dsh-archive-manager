@@ -4,6 +4,13 @@
 
 Published release notes are retained below; new versions are added without removing earlier entries.
 
+## 0.1.18 - 2026-09-11
+
+- Rebuild the fork on top of upstream `0.1.36`: adopt the `src` → `lib` build pipeline, workspace archiving, the plugin self-update flow, and the multi-version DSH matrix (`0.1.0-rc.8`, `0.1.1-rc.2`, `0.1.2-rc.1`, `0.1.5-rc.1`).
+- Keep the fork customization: the workspace sidebar no longer offers **Delete session** — the session context-menu entry and the archived-card trash button are removed, together with their confirmation dialog and state. Permanent deletion remains available in **Settings → Archived sessions**.
+- Rename the package to `@ggtec528/dsh-archive-manager`, and point repository metadata, README links, the `cordis.patch.yml` service names, the typert descriptors, and the in-plugin update endpoint and links at the fork.
+- The `0.1.18` section further below is upstream `@michengai/dsh-archive-manager`'s own release and is retained as history.
+
 ## 0.1.36 - 2026-09-10
 
 - Harden release delivery: align dependency cooling preflight and synchronize bilingual GitHub Releases only after confirming the exact npm version and commit; recover already-published releases without reinstalling or republishing.

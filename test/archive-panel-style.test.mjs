@@ -5,14 +5,24 @@ import test from "node:test";
 
 const clientPath = fileURLToPath(new URL("../src/client.js", import.meta.url));
 
-test("归档会话使用卡片布局，并始终显示恢复与删除操作", async () => {
+test("归档会话使用卡片布局，并只显示恢复操作", async () => {
   const client = await readFile(clientPath, "utf8");
 
   assert.match(client, /dsham_archiveCardActions/);
   assert.match(client, /dsham_archiveCardMeta/);
   assert.match(client, /onUnarchive\(node\.id\)/);
-  assert.match(client, /onDeleteSession\(node\.id, row\.title\)/);
   assert.match(client, /background:var\(--dsw-alias-button-elevated-fill\)/);
+  assert.doesNotMatch(client, /dsham_archiveCardDelete/);
+});
+
+test("侧栏不提供删除会话入口，永久删除只保留在设置页", async () => {
+  const client = await readFile(clientPath, "utf8");
+
+  assert.doesNotMatch(client, /id: "delete-session"/);
+  assert.doesNotMatch(client, /onDeleteSession/);
+  assert.doesNotMatch(client, /onSessionDelete/);
+  // 设置页的「已归档」列表仍保留永久删除按钮。
+  assert.match(client, /className: "dsham_settingsDelete"/);
 });
 
 test("两个删除确认入口都使用红色危险样式", async () => {

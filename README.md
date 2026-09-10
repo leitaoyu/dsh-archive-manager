@@ -11,13 +11,15 @@
   [简体中文](README.zh-CN.md) · [Changelog](CHANGELOG.md) · [Apache-2.0](LICENSE)
 
   [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-  [![npm package](https://img.shields.io/npm/v/%40michengai%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![npm downloads](https://img.shields.io/npm/dt/%40michengai%2Fdsh-archive-manager.svg?label=npm%20downloads)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/MichengAI/dsh-archive-manager)
+  [![npm package](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm downloads](https://img.shields.io/npm/dt/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20downloads)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/leitaoyu/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
 </div>
 
 > DSH Archive Manager is a community-maintained DeepSeek Harness (DSH) plugin, not an official DeepSeek AI product.
+>
+> **Fork of [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager)**, rebased onto upstream `0.1.36`. This fork removes the **Delete session** option from the workspace sidebar to prevent accidental deletion; permanent deletion is still available through **Settings → Archived sessions**. Everything else follows upstream.
 
 ## Features
 
@@ -26,13 +28,10 @@ Put inactive conversations away and find them again when needed. Search, restore
 - **Put finished tasks away**: archive one conversation or all active chats in a workspace.
 - **Find past work**: search titles, filter by project, and sort by time or title in **Settings → Archived sessions**.
 - **Resume your work**: restore one conversation, a project group, or all archived chats.
-- **Clean up records**: permanently delete individual chats or batches after confirmation. **Permanent deletion cannot be undone.**
+- **Clean up records**: permanently delete individual chats or batches from **Settings → Archived sessions** after confirmation. **Permanent deletion cannot be undone.**
+- **Fork difference**: the sidebar session menu and archived rows no longer offer **Delete session**, so a mis-click in the sidebar cannot destroy a conversation. Permanent deletion remains in **Settings → Archived sessions**.
 
 ## Screenshots
-
-Open the sidebar session menu and choose **Archive session**:
-
-![Archive a session from the session menu](assets/screenshots/archive-session-menu.png)
 
 Search, sort, filter by project, unarchive, or permanently delete chats in **Settings → Archived sessions**:
 
@@ -48,14 +47,14 @@ For a ready-to-use workbench, download [DSH Codex Desktop](https://github.com/Mi
 | [IM Connect](https://github.com/MichengAI/dsh-im-connect) | Send tasks and receive replies through your usual messenger |
 | [Automation](https://github.com/MichengAI/dsh-automation) | Schedule tasks and review each run |
 | [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) | Find, enable, create, and import local skills |
-| [Archive Manager](https://github.com/MichengAI/dsh-archive-manager) | Search, restore, or clean up archived conversations |
+| [Archive Manager](https://github.com/leitaoyu/dsh-archive-manager) | Search, restore, or clean up archived conversations |
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | Choose and summon specialists for your task |
 | [BTW](https://github.com/MichengAI/dsh-btw) | Ask side questions without interrupting the main task |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | Use /simplify to improve code within your Git changes |
 
 ## Prerequisites
 
-- The current source supports DeepSeek Harness `0.1.5-rc.1` and the legacy hosts below. These changes were published in plugin `0.1.35`. Later versions require separate validation.
+- The current source supports DeepSeek Harness `0.1.5-rc.1` and the legacy hosts below. The locally installed `0.1.2-rc.1` host is covered by the same matrix.
 
 - A working DeepSeek Harness Web installation with `dsh` available in PowerShell.
 - Examples use the `web` profile; replace it with the target profile.
@@ -76,12 +75,14 @@ Do not run `test/fixtures/*.mjs` directly. Fixtures validate the isolated entry 
 
 | DSH | Cordis | Automated regression |
 | --- | --- | --- |
-| `0.1.0-rc.8` | `4.0.1` | 153 passed |
-| `0.1.1-rc.2` | `4.0.1` | 153 passed, plus legacy cache migration validation |
-| `0.1.2-rc.1` | `4.0.2` | 153 passed |
-| `0.1.5-rc.1` | `4.0.2` | 156 passed |
+| `0.1.0-rc.8` | `4.0.1` | 154 passed |
+| `0.1.1-rc.2` | `4.0.1` | 154 passed, plus legacy cache migration validation |
+| `0.1.2-rc.1` | `4.0.2` | 154 passed |
+| `0.1.5-rc.1` | `4.0.2` | 151 passed against the same dependency set resolved locally; see the note below |
 
-Coverage includes workspace navigation, global-panel dismissal, cancellation of stale navigation, sidebar wiring, peer version acceptance, client Remote integration, archive/restore, real JSONL/Zstandard deletion and subagent cascades, and queries/reopened storage after deletion. Tested on Windows / Node.js 24. A real browser acceptance run also passed in an isolated DSH 0.1.5-rc.1 Web Profile: package installation, archive/restore, deletion cancellation and confirmation, subagent cascades, cross-filter batch deletion, workspace selection, returning from global panels, new sessions and forks, content search, and restart persistence. Content search requires an open host query database; it passed after changing the isolated Profile from `openAt: never` to `startup`. The other three versions have isolated automated coverage only; no external model calls were made. The latest storage fixture isolates only the upstream POSIX `fs-ext` import that cannot load on Windows; file operations and native Windows locking still use the official implementation.
+Counts above were measured on this fork under Linux / Node.js 24. The isolated `0.1.5-rc.1` profile cannot currently finish its own `npm install`: `@deepseek-ai/dsh-session-query@0.1.5-rc.1` accepts the newer `dsh-session-title@0.1.5-rc.2`, whose peer chain (`dsh-agent`, `dsh-system-prompt`, `dsh-invariants` at `^0.1.5-rc.2`) conflicts with the pinned `0.1.5-rc.1` set, so npm aborts with `ERESOLVE` before any plugin code runs. This reproduces against untouched upstream `main`, whose dependency blocks are identical, and is a registry drift issue rather than a plugin regression. Install the same set with a frozen lockfile (`pnpm install --frozen-lockfile`), which resolves the entire `@deepseek-ai/dsh-*` tree to exactly `0.1.5-rc.1`, and then run `pnpm test`; that is what the `0.1.5-rc.1` row reports.
+
+Coverage includes workspace navigation, global-panel dismissal, cancellation of stale navigation, sidebar wiring, peer version acceptance, client Remote integration, archive/restore, real JSONL/Zstandard deletion and subagent cascades, and queries/reopened storage after deletion. Upstream verified these combinations on Windows / Node.js 24 and also passed a real browser acceptance run in an isolated DSH `0.1.5-rc.1` Web Profile: package installation, archive/restore, deletion cancellation and confirmation, subagent cascades, cross-filter batch deletion, workspace selection, returning from global panels, new sessions and forks, content search, and restart persistence. Content search requires an open host query database; it passed after changing the isolated Profile from `openAt: never` to `startup`. This fork re-ran the automated suites only; it has not repeated the browser acceptance run, and the other three versions have isolated automated coverage only. No external model calls were made. The latest storage fixture isolates only the upstream POSIX `fs-ext` import that cannot load on Windows; file operations and native Windows locking still use the official implementation.
 
 The installation commands below use the official npm registry.
 
@@ -90,7 +91,7 @@ The installation commands below use the official npm registry.
 Send the prompt below to any agent that can run terminal commands on your computer. Replace `web` with your actual profile. Once installed, use the plugin in DSH.
 
 ```text
-Install the DSH plugin @michengai/dsh-archive-manager into my local web profile by running: dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/. Then run dsh --profile web --dump-config, confirm the configuration includes workspace-archive-manager, ui-workspace-archive-manager, and explain how to reload DSH and start using the plugin.
+Install the DSH plugin @ggtec528/dsh-archive-manager into my local web profile by running: dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/. Then run dsh --profile web --dump-config, confirm the configuration includes workspace-archive-manager, ui-workspace-archive-manager, and explain how to reload DSH and start using the plugin.
 ```
 
 ### Install the latest package from the official npm registry
@@ -100,7 +101,7 @@ Run this from any PowerShell directory:
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
+dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
 dsh --profile web --dump-config
 ```
 
@@ -119,13 +120,13 @@ The settings title shows the installed version and a **Check for updates** butto
 3. Search by title, sort by update time, creation time, or title, or filter the list by project.
 4. Select **Unarchive** to restore one session, or select **Restore all** in the page header.
 5. Open a project heading's action menu to restore or delete all of that project's archived chats.
-6. Use the delete icon to remove one session permanently, then confirm the deletion. **It cannot be undone.**
+6. To permanently delete one session, open **Settings → Archived sessions**, find the session, and use the delete icon. **It cannot be undone.** The sidebar has no delete entry in this fork.
 
 If the entry is missing after installation or upgrade, restart DSH Web and hard-refresh the browser. It is located directly after **Connectors** in Settings.
 
 ## Data handling limits
 
-- Deletion always requires confirmation.
+- Deletion always requires confirmation, and the only entry point is **Settings → Archived sessions**.
 - It removes workspace records, archive markers, and the projection cache. For the official JSONL backend, a validated layout also allows removal of the session-owned directory and its contents, including attachments. Other backends or unknown layouts only lose the located transcript artifact, never its parent directory.
 - Project containers and storage roots are retained. Deletion refuses symbolic links or Windows junctions at the official layout's project/session directory levels and keeps the operation retryable.
 - Layout validation uses the official backend's initialized absolute root, so a relative root remains stable across host working-directory changes. If that field is unavailable, only an absolute configured root is accepted. An unverified official JSONL layout emits a warning with the session ID and artifact path before falling back to artifact-only deletion.
@@ -142,8 +143,7 @@ Use this for debugging or unpublished changes. The cloned directory becomes the 
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-Set-Location D:\Repository\deepseek-harness-plugin
-git clone https://github.com/MichengAI/dsh-archive-manager.git
+git clone https://github.com/leitaoyu/dsh-archive-manager.git
 Set-Location .\dsh-archive-manager
 pnpm install --frozen-lockfile
 pnpm build
@@ -183,6 +183,10 @@ pnpm verify
 
 `prepublishOnly` runs the full verification suite before publishing and verifies that committed `lib` output matches the current `src` build.
 
+## Acknowledgments
+
+Thanks to [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager) for the upstream project this fork is based on.
+
 ## License
 
 Licensed under [Apache License 2.0](LICENSE).
@@ -193,4 +197,4 @@ Tag releases and manual retries verify the exact npm version and `gitHead` befor
 
 Recovery checks the npm package name, version, and tag commit first. An exact match skips dependency installation, full builds, and republishing, and only synchronizes the Release. Unpublished old tags must still satisfy their original cooling policy. Exact-version and latest propagation each have a two-minute deadline; a lagging latest tag does not create a non-Latest Release prematurely.
 
-Updating main does not retrigger an existing tag. After pushing workflow changes, manually run `publish.yml` on main with the original tag (for example, `v0.1.35`); do not move or recreate the tag.
+Updating main does not retrigger an existing tag. After pushing workflow changes, manually run `publish.yml` on main with the original tag (for example, `v0.1.18`); do not move or recreate the tag.
