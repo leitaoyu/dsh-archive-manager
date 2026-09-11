@@ -4,6 +4,11 @@
 
 Published release notes are retained below; new versions are added without removing earlier entries.
 
+## 0.1.19 - 2026-09-11
+
+- Resolve the newest supported host row against its own release epoch: the isolated `0.1.5-rc.1` install now passes `--before`, so that row completes its own dependency install instead of aborting with `ERESOLVE` once the registry carries a newer `0.1.5-rc.2` sibling set, and it reports 157 passing tests.
+- No plugin runtime changes: the host services, the client bundle, and the published entry points are unchanged from `0.1.18`.
+
 ## 0.1.18 - 2026-09-11
 
 - Rebuild the fork on top of upstream `0.1.36`: adopt the `src` → `lib` build pipeline, workspace archiving, the plugin self-update flow, and the multi-version DSH matrix (`0.1.0-rc.8`, `0.1.1-rc.2`, `0.1.2-rc.1`, `0.1.5-rc.1`).
