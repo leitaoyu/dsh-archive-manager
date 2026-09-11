@@ -1,7 +1,11 @@
 name: 兼容性回归
 
 on:
+  # 只按分支推送触发：写成空的 `push:` 会把 tag 推送也算进来，于是同一个 commit
+  # 既在分支上又在标签上时会重复跑两遍完整回归。tag 的验证由 publish.yml 负责，
+  # 它发布前已经执行过同一条 `pnpm verify`。
   push:
+    branches: ['**']
   pull_request:
 
 permissions:
