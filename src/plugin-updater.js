@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { basename, dirname, isAbsolute, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-const PLUGIN_UPDATE_HEADER = "x-ggtec528-plugin-update";
+const PLUGIN_UPDATE_HEADER = "x-leitaoy-plugin-update";
 const PLUGIN_UPDATE_IPC = "apply-plugin-updates";
 function header(request, name) {
   const value = request.headers?.[name];

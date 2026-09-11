@@ -8,7 +8,8 @@
 
 - 基于上游 `0.1.36` 重建本复刻分支：采用 `src` → `lib` 构建流水线、工作区归档、插件自更新流程，以及多版本 DSH 兼容矩阵（`0.1.0-rc.8`、`0.1.1-rc.2`、`0.1.2-rc.1`、`0.1.5-rc.1`）。
 - 保留本分支的自定义：侧栏不再提供「删除会话」——会话菜单项与归档卡片上的垃圾桶按钮连同其确认弹窗和状态一并移除；永久删除仍保留在「设置 → 归档会话」。
-- 包名改为 `@ggtec528/dsh-archive-manager`，并将仓库元数据、README 链接、`cordis.patch.yml` 服务名、typert 描述符以及插件内更新接口和链接全部指向本复刻仓库。
+- 包名改为 `@leitaoy/dsh-archive-manager`，并将仓库元数据、README 链接、`cordis.patch.yml` 服务名、typert 描述符以及插件内更新接口和链接全部指向本复刻仓库。
+- 发布 scope 改为复刻者本人的 npm 账户：包名、安装命令、npm 徽章、更新请求头以及插件更新接口（`/api/leitaoy/dsh-archive-manager/update`）统一使用 `@leitaoy`。此前从 `@ggtec528` scope 安装的实例需先执行 `dsh plugin --profile web remove @ggtec528/dsh-archive-manager` 再安装本包，因为两者声明了相同的服务行。
 - 下方另有一个 `0.1.18` 小节，属于上游 `@michengai/dsh-archive-manager` 自身的发布记录，作为历史保留。
 
 ## 0.1.36 - 2026-09-10

@@ -11,8 +11,8 @@
   [English](README.md) · [更新日志](CHANGELOG.zh-CN.md) · [Apache-2.0](LICENSE)
 
   [![许可证：Apache-2.0](https://img.shields.io/badge/许可证-Apache--2.0-blue.svg)](LICENSE)
-  [![npm package](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
-  [![npm 下载量](https://img.shields.io/npm/dt/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm package](https://img.shields.io/npm/v/%40leitaoy%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@leitaoy/dsh-archive-manager)
+  [![npm 下载量](https://img.shields.io/npm/dt/%40leitaoy%2Fdsh-archive-manager.svg?label=npm%20%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://www.npmjs.com/package/@leitaoy/dsh-archive-manager)
   [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/leitaoyu/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
 </div>
@@ -91,7 +91,7 @@ DSH peer 依赖仅接受 `0.1.0-rc.8 || 0.1.1-rc.2 || 0.1.2-rc.1 || 0.1.5-rc.1`�
 把下面这段话发给任意能够执行本机终端命令的 Agent。将 `web` 替换为实际使用的 profile；安装完成后，在 DSH 中使用本插件。
 
 ```text
-请将 DSH 插件 @ggtec528/dsh-archive-manager 安装到本机 web profile，执行：dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/。安装后执行 dsh --profile web --dump-config，确认配置包含 workspace-archive-manager, ui-workspace-archive-manager，并告诉我如何重新加载 DSH 和开始使用。
+请将 DSH 插件 @leitaoy/dsh-archive-manager 安装到本机 web profile，执行：dsh plugin --profile web add @leitaoy/dsh-archive-manager@latest --registry=https://registry.npmjs.org/。安装后执行 dsh --profile web --dump-config，确认配置包含 workspace-archive-manager, ui-workspace-archive-manager，并告诉我如何重新加载 DSH 和开始使用。
 ```
 
 ### 从官方 npm 安装最新版
@@ -101,11 +101,13 @@ DSH peer 依赖仅接受 `0.1.0-rc.8 || 0.1.1-rc.2 || 0.1.2-rc.1 || 0.1.5-rc.1`�
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
+dsh plugin --profile web add @leitaoy/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
 dsh --profile web --dump-config
 ```
 
 需要钉死某一版时，把 `@latest` 换成具体版本，例如 `@x.y.z`。
+
+本复刻分支此前发布在 `@ggtec528` scope 下。若已从该 scope 安装，请先执行 `dsh plugin --profile web remove @ggtec528/dsh-archive-manager` 再安装本包，因为两者声明了相同的服务行；设置项随后由 `@leitaoy/dsh-archive-manager` 提供。
 
 配置输出中应包含 `workspace-archive-manager` 与 `ui-workspace-archive-manager`。安装后重启 DSH Web 并在浏览器硬刷新；请勿手工复制客户端文件，否则设置页和归档菜单不会被挂载。
 

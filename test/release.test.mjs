@@ -8,7 +8,7 @@ import {
   syncGithubRelease,
 } from "../scripts/release-control.mjs";
 const expected = {
-  name: "@ggtec528/dsh-archive-manager",
+  name: "@leitaoy/dsh-archive-manager",
   version: "0.1.35",
   gitHead: "a".repeat(40),
 };

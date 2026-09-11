@@ -1,7 +1,7 @@
 import { observePluginUpdate } from "./plugin-update-ui.js";
 
 window.__ModuleLoader__.load({
-	id: "@ggtec528/dsh-archive-manager",
+	id: "@leitaoy/dsh-archive-manager",
 	factory: (require) => {
 		var module = { exports: {} };
 		var exports = module.exports;
@@ -45,7 +45,7 @@ window.__ModuleLoader__.load({
 			element.append(svg);
 			return element;
 		}
-		//#region @ggtec528/dsh-archive-manager: typert remote contribution + archived styling
+		//#region @leitaoy/dsh-archive-manager: typert remote contribution + archived styling
 		/**
 		* Strict codec shims for the archive-manager Remote descriptors. The
 		* client typert gateway requires `mode: "strict"` codecs whose schema
@@ -126,10 +126,10 @@ window.__ModuleLoader__.load({
 		* 调用走 typert gateway SRC 路径，不影响既有 `/api/workspace.*` 网关。
 		*/
 		const ARCHIVE_MANAGER_REMOTE = {
-			package: "@ggtec528/dsh-archive-manager",
+			package: "@leitaoy/dsh-archive-manager",
 			descriptors: [
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSession",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/unarchiveSession",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "unarchiveSession",
@@ -142,13 +142,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionIds",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#ArchivedSessionIds",
 						schema: archivedSetSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteSession",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/deleteSession",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "deleteSession",
@@ -161,13 +161,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#Deleted",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#Deleted",
 						schema: deletedSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/unarchiveSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "unarchiveSessions",
@@ -176,17 +176,17 @@ window.__ModuleLoader__.load({
 						name: "target",
 						wire: "target",
 						source: "json",
-						codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+						codec: { mode: "strict", typeSymbol: "@leitaoy/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#UnarchivedBatch",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#UnarchivedBatch",
 						schema: unarchivedBatchSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/archiveWorkspaceSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "archiveWorkspaceSessions",
@@ -199,13 +199,13 @@ window.__ModuleLoader__.load({
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedWorkspaceBatch",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#ArchivedWorkspaceBatch",
 						schema: archivedWorkspaceBatchSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/deleteArchivedSessions",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "deleteArchivedSessions",
@@ -214,17 +214,17 @@ window.__ModuleLoader__.load({
 						name: "target",
 						wire: "target",
 						source: "json",
-						codec: { mode: "strict", typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
+						codec: { mode: "strict", typeSymbol: "@leitaoy/dsh-archive-manager/types#ArchivedBatchTarget", schema: archivedBatchTargetSchema }
 					}],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#DeletedBatch",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#DeletedBatch",
 						schema: deletedBatchSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				},
 				{
-					id: "@ggtec528/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
+					id: "@leitaoy/dsh-archive-manager#workspaceRegistry/archivedSessionMetadata",
 					service: "workspaceRegistry",
 					namespace: "workspaceRegistry",
 					method: "archivedSessionMetadata",
@@ -232,10 +232,10 @@ window.__ModuleLoader__.load({
 					parameters: [],
 					result: {
 						mode: "strict",
-						typeSymbol: "@ggtec528/dsh-archive-manager/types#ArchivedSessionMetadata",
+						typeSymbol: "@leitaoy/dsh-archive-manager/types#ArchivedSessionMetadata",
 						schema: archivedSessionMetadataSchema
 					},
-					sourceLocation: { file: "@ggtec528/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
+					sourceLocation: { file: "@leitaoy/dsh-archive-manager/lib/workspace.js", line: 1, column: 1 }
 				}
 			]
 		};
@@ -250,10 +250,10 @@ window.__ModuleLoader__.load({
 			unarchive: "dsham_archiveCardUnarchive"
 		};
 		const ARCHIVED_CSS = ".YDXeBa_sessionRow.dsham_archivedRow{box-sizing:border-box;cursor:default;min-height:64px;height:auto;background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;gap:12px;margin:8px 0;padding:10px 16px}.YDXeBa_sessionRow.dsham_archivedRow:hover{background:var(--dsw-alias-button-elevated-fill);border-color:var(--dsw-alias-border-l3)}.YDXeBa_searchResultRow.dsham_archivedRow{background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2);border-radius:16px;margin:8px 0;padding:10px 16px}.dsham_archivedTitle{color:var(--dsw-alias-label-primary);font-weight:600}.dsham_archivedBadge{display:none}.dsham_archiveCardContent{min-width:0;flex:1;flex-direction:column;gap:2px;display:flex}.dsham_archiveCardMeta{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_time,.YDXeBa_sessionRow.dsham_archivedRow>.YDXeBa_rowActions{display:none}.dsham_archiveCardActions{align-items:center;gap:12px;display:inline-flex}.dsham_archiveCardActions button{cursor:pointer;border:none;flex:none}.dsham_archiveCardUnarchive{height:32px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-button-elevated-fill);border:1px solid var(--dsw-alias-border-l2)!important;border-radius:10px;padding:0 12px;font-size:13px;font-weight:600;line-height:20px}.dsham_archiveCardUnarchive:hover{background:var(--dsw-alias-interactive-bg-hover)}";
-		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@ggtec528/dsh-archive-manager/Archived.module.css") + "]") === null) {
+		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@leitaoy/dsh-archive-manager/Archived.module.css") + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
-			tag.dataset.pluginCss = "@ggtec528/dsh-archive-manager/Archived.module.css";
+			tag.dataset.plugin = "@leitaoy/dsh-archive-manager";
+			tag.dataset.pluginCss = "@leitaoy/dsh-archive-manager/Archived.module.css";
 			tag.textContent = ARCHIVED_CSS;
 			document.head.appendChild(tag);
 		}
@@ -888,7 +888,7 @@ window.__ModuleLoader__.load({
 		const tagId$2 = "@deepseek-ai/dsh-client-ui-workspace/Rows.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$2) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
+			tag.dataset.plugin = "@leitaoy/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId$2;
 			tag.textContent = css$2;
 			document.head.appendChild(tag);
@@ -1405,7 +1405,7 @@ window.__ModuleLoader__.load({
 		const tagId$1 = "@deepseek-ai/dsh-client-ui-workspace/WorkspacePicker.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$1) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
+			tag.dataset.plugin = "@leitaoy/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId$1;
 			tag.textContent = css$1;
 			document.head.appendChild(tag);
@@ -1575,7 +1575,7 @@ window.__ModuleLoader__.load({
 		const tagId = "@deepseek-ai/dsh-client-ui-workspace/WorkspaceBrowser.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
+			tag.dataset.plugin = "@leitaoy/dsh-archive-manager";
 			tag.dataset.pluginCss = tagId;
 			tag.textContent = css;
 			document.head.appendChild(tag);
@@ -2911,7 +2911,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		//#endregion
-		//#region @ggtec528/dsh-archive-manager: settings section
+		//#region @leitaoy/dsh-archive-manager: settings section
 		const ARCHIVE_SETTINGS_CSS = ".dsham_settings{container-type:inline-size;min-width:0;box-sizing:border-box;width:min(100%,760px);margin:0 auto;padding:0 0 32px;color:var(--dsw-alias-label-primary)}.dsham_settingsHeader{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-bottom:16px}.dsham_settings h2{margin:0;font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.4px;white-space:nowrap}.dsham_settingsIntro{margin:12px 0 0;max-width:42em;color:var(--dsw-alias-label-tertiary);font-size:14px;line-height:22px}.dsham_settingsDanger{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;color:var(--dsw-alias-state-error-primary);background:transparent;border:1px solid var(--dsw-alias-state-error-primary);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsDanger:hover{background:color-mix(in srgb,var(--dsw-alias-state-error-primary) 20%,transparent)}.dsham_settingsToolbar{display:flex;gap:8px;margin-bottom:16px}.dsham_settingsSearch{display:flex;align-items:center;gap:8px;min-width:0;flex:1;height:32px;padding:0 12px;color:var(--dsw-alias-label-tertiary);background:var(--dsw-alias-bg-layer-3,var(--dsw-alias-button-elevated-fill));border:1px solid var(--dsw-alias-border-l2);border-radius:8px}.dsham_settingsSearch:focus-within{border-color:var(--dsw-alias-label-tertiary)}.dsham_settingsSearch input{width:100%;min-width:0;padding:0;color:var(--dsw-alias-label-primary);background:transparent;border:0;outline:0;font:inherit;font-size:12px}.dsham_settingsSearch input::placeholder{color:var(--dsw-alias-label-tertiary)}.dsham_settingsFilter{position:relative;min-width:168px;flex:none}.dsham_selectTrigger{box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:32px;padding:0 10px;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-bg-layer-3,var(--dsw-alias-button-elevated-fill));border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;line-height:20px;text-align:left}.dsham_selectTrigger:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_selectTrigger:focus-visible{outline:2px solid var(--dsw-alias-state-success-primary);outline-offset:2px}.dsham_selectTrigger[aria-expanded='true']{border-color:var(--dsw-alias-state-success-primary)}.dsham_selectValue{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.dsham_selectCaret{flex:none;width:12px;height:12px;color:var(--dsw-alias-label-tertiary)}.dsham_selectMenu{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:30;box-sizing:border-box;min-width:100%;max-height:280px;overflow:auto;padding:4px;border:1px solid var(--dsw-alias-border-l2);border-radius:10px;background:var(--dsw-specific-menu,var(--dsw-alias-bg-layer-2));box-shadow:var(--dsw-shadow-lv3)}.dsham_selectOption{box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:32px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:20px;text-align:left;cursor:pointer}.dsham_selectOption:hover,.dsham_selectOption[data-active='true']{background:var(--dsw-alias-interactive-bg-hover)}.dsham_selectOption[aria-selected='true']{color:var(--dsw-alias-state-success-primary)}.dsham_settingsGroup{margin:0 0 20px}.dsham_settingsGroupHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}.dsham_settingsGroupTitle{display:flex;align-items:center;gap:8px;min-width:0;margin:0;color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600}.dsham_settingsGroupTitle svg{flex:none;color:var(--dsw-alias-label-secondary)}.dsham_settingsCount{flex:none;color:var(--dsw-alias-label-tertiary);font-size:12px}.dsham_settingsList{overflow:hidden;border:1px solid var(--dsw-alias-border-l2);border-radius:12px;background:var(--dsw-alias-bg-layer-2,var(--dsw-alias-button-elevated-fill))}.dsham_settingsRow{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 16px;border-bottom:1px solid var(--dsw-alias-border-l2)}.dsham_settingsRow:last-child{border-bottom:0}.dsham_settingsContent{min-width:0;flex:1}.dsham_settingsTitle{overflow:hidden;color:var(--dsw-alias-label-primary);font-size:13px;font-weight:600;line-height:18px;text-overflow:ellipsis;white-space:nowrap}.dsham_settingsMeta{margin-top:2px;color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:16px}.dsham_settingsActions{display:flex;align-items:center;gap:8px}.dsham_settingsAction{min-height:32px;padding:0 12px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsAction:hover{filter:brightness(1.12)}.dsham_settingsDelete{display:flex;align-items:center;justify-content:center;width:28px;height:28px;color:var(--dsw-alias-label-tertiary);background:transparent;border:0;border-radius:8px;cursor:pointer}.dsham_settingsDelete:hover{color:var(--dsw-alias-state-error-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsEmpty{padding:28px 8px;color:var(--dsw-alias-label-secondary);text-align:center}.dsham_settingsError{margin-top:10px;color:var(--dsw-alias-state-error-primary);font-size:12px}@container(max-width:520px){.dsham_settingsHeader{margin-bottom:16px}.dsham_settingsToolbar{flex-wrap:wrap;margin-bottom:28px}.dsham_settingsSearch{flex-basis:100%}.dsham_settingsFilter{flex:1;min-width:0}.dsham_settingsGroup{margin-bottom:32px}.dsham_settingsRow{padding:10px 12px}.dsham_settingsActions{gap:4px}}";
 		const ARCHIVE_SETTINGS_BATCH_CSS = ".dsham_settingsHeaderActions,.dsham_settingsGroupMeta{display:flex;align-items:center;gap:8px;flex:none;flex-wrap:wrap}.dsham_settingsRestoreAll{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;cursor:pointer;font:inherit;font-size:13px;font-weight:500}.dsham_settingsRestoreAll:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsRestoreAll:disabled,.dsham_settingsDanger:disabled,.dsham_settingsGroupMenu:disabled{cursor:not-allowed;opacity:.5}.dsham_settingsGroupMenu{display:flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;color:var(--dsw-alias-label-tertiary);background:transparent;border:0;border-radius:8px;cursor:pointer}.dsham_settingsGroupMenu:hover{color:var(--dsw-alias-label-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsStatus{margin-top:10px;color:var(--dsw-alias-label-secondary);font-size:12px}@media(max-width:720px){.dsham_settingsHeader{flex-direction:column}.dsham_settingsHeaderActions{align-self:flex-start}}";
 		const ARCHIVE_SETTINGS_EXTERNAL_LINK_CSS = ".dsham_settingsTitleRow{display:flex;align-items:center;gap:8px 12px;min-width:0;flex-wrap:wrap}.dsham_settingsLinks{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.dsham_settingsExternalLink{display:inline-flex;align-items:center;gap:5px;min-height:28px;padding:0 8px;color:var(--dsw-alias-label-secondary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:7px;font-size:12px;font-weight:500;line-height:18px;text-decoration:none;white-space:nowrap}.dsham_settingsExternalLink:hover{color:var(--dsw-alias-label-primary);background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsExternalLink:focus-visible{outline:2px solid var(--dsw-alias-state-success-primary);outline-offset:2px}.dsham_settingsExternalLink svg{flex:none}@media(max-width:720px){.dsham_settingsTitleRow{flex-wrap:wrap}}";
@@ -2919,10 +2919,10 @@ window.__ModuleLoader__.load({
 		const ARCHIVE_WORKSPACE_CONFIRM_CSS = ".dsham_archiveWorkspaceConfirm{color:var(--dsw-alias-state-error-primary)!important;background:transparent!important;border-color:var(--dsw-alias-state-error-primary)!important}.dsham_archiveWorkspaceConfirm:hover:not(:disabled){background:color-mix(in srgb,var(--dsw-alias-state-error-primary) 20%,transparent)!important}.dsham_archiveWorkspaceConfirm:focus-visible{outline:2px solid var(--dsw-alias-state-error-secondary);outline-offset:2px}.dsham_archiveWorkspaceConfirm:disabled{cursor:not-allowed;opacity:.5}";
 		const ARCHIVE_SETTINGS_SELECTION_CSS = ".dsham_settingsSelection{display:flex;align-items:center;gap:10px;min-height:40px;margin:-8px 0 16px;padding:4px 10px;border:1px solid var(--dsw-alias-border-l2);border-radius:8px;background:var(--dsw-alias-bg-layer-2,var(--dsw-alias-button-elevated-fill))}.dsham_settingsSelectionToggle{display:inline-flex;align-items:center;gap:8px;min-width:0;color:var(--dsw-alias-label-primary);font-size:13px;cursor:pointer}.dsham_settingsCheckbox{width:16px;height:16px;margin:0;accent-color:#3b82f6}.dsham_settingsSelectionCount{margin-right:auto;color:var(--dsw-alias-label-tertiary);font-size:12px}.dsham_settingsSelectionAction{min-height:28px;padding:0 10px;color:var(--dsw-alias-label-primary);background:transparent;border:1px solid var(--dsw-alias-border-l2);border-radius:7px;cursor:pointer;font:inherit;font-size:12px;font-weight:500}.dsham_settingsSelectionAction:hover{background:var(--dsw-alias-interactive-bg-hover)}.dsham_settingsSelectionDelete{color:var(--dsw-alias-state-error-primary);border-color:var(--dsw-alias-state-error-primary)}.dsham_settingsSelectionAction:disabled{cursor:not-allowed;opacity:.5}@media(max-width:720px){.dsham_settingsSelection{flex-wrap:wrap}.dsham_settingsSelectionCount{margin-right:0}.dsham_settingsSelectionAction{margin-left:auto}.dsham_settingsSelectionAction+.dsham_settingsSelectionAction{margin-left:-2px}}";
 		const ARCHIVE_SETTINGS_LAYOUT_OVERRIDE = ".dsham_settings{margin:0 auto!important}@media(max-width:720px){.dsham_settings{margin:0 auto!important}}";
-		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@ggtec528/dsh-archive-manager/ArchiveSettings.layout.css") + "]") === null) {
+		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify("@leitaoy/dsh-archive-manager/ArchiveSettings.layout.css") + "]") === null) {
 			const tag = document.createElement("style");
-			tag.dataset.plugin = "@ggtec528/dsh-archive-manager";
-			tag.dataset.pluginCss = "@ggtec528/dsh-archive-manager/ArchiveSettings.layout.css";
+			tag.dataset.plugin = "@leitaoy/dsh-archive-manager";
+			tag.dataset.pluginCss = "@leitaoy/dsh-archive-manager/ArchiveSettings.layout.css";
 			tag.textContent = ARCHIVE_SETTINGS_LAYOUT_OVERRIDE + ARCHIVE_SETTINGS_DELETE_CONFIRM_CSS + ARCHIVE_WORKSPACE_CONFIRM_CSS;
 			document.head.appendChild(tag);
 		}
@@ -3895,8 +3895,8 @@ window.__ModuleLoader__.load({
 				en
 			}), "dsh-archive-manager: dictionaries");
 			ctx.effect(() => observePluginUpdate({
-				endpoint: "/api/ggtec528/dsh-archive-manager/update",
-				packageName: "@ggtec528/dsh-archive-manager",
+				endpoint: "/api/leitaoy/dsh-archive-manager/update",
+				packageName: "@leitaoy/dsh-archive-manager",
 				titleRowSelector: ".dsham_settingsTitleRow",
 				linksSelector: ".dsham_settingsLinks",
 				zhName: "归档会话",

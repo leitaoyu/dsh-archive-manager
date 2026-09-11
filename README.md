@@ -11,8 +11,8 @@
   [简体中文](README.zh-CN.md) · [Changelog](CHANGELOG.md) · [Apache-2.0](LICENSE)
 
   [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-  [![npm package](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
-  [![npm downloads](https://img.shields.io/npm/dt/%40ggtec528%2Fdsh-archive-manager.svg?label=npm%20downloads)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm package](https://img.shields.io/npm/v/%40leitaoy%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@leitaoy/dsh-archive-manager)
+  [![npm downloads](https://img.shields.io/npm/dt/%40leitaoy%2Fdsh-archive-manager.svg?label=npm%20downloads)](https://www.npmjs.com/package/@leitaoy/dsh-archive-manager)
   [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/leitaoyu/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
 </div>
@@ -91,7 +91,7 @@ The installation commands below use the official npm registry.
 Send the prompt below to any agent that can run terminal commands on your computer. Replace `web` with your actual profile. Once installed, use the plugin in DSH.
 
 ```text
-Install the DSH plugin @ggtec528/dsh-archive-manager into my local web profile by running: dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/. Then run dsh --profile web --dump-config, confirm the configuration includes workspace-archive-manager, ui-workspace-archive-manager, and explain how to reload DSH and start using the plugin.
+Install the DSH plugin @leitaoy/dsh-archive-manager into my local web profile by running: dsh plugin --profile web add @leitaoy/dsh-archive-manager@latest --registry=https://registry.npmjs.org/. Then run dsh --profile web --dump-config, confirm the configuration includes workspace-archive-manager, ui-workspace-archive-manager, and explain how to reload DSH and start using the plugin.
 ```
 
 ### Install the latest package from the official npm registry
@@ -101,11 +101,13 @@ Run this from any PowerShell directory:
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-dsh plugin --profile web add @ggtec528/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
+dsh plugin --profile web add @leitaoy/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
 dsh --profile web --dump-config
 ```
 
 To pin a release, replace `@latest` with a specific version such as `@x.y.z`.
+
+This fork previously shipped under the `@ggtec528` scope. An installation created from that scope must be removed first with `dsh plugin --profile web remove @ggtec528/dsh-archive-manager`, because both packages declare the same service lines; the Settings entry is then provided by `@leitaoy/dsh-archive-manager`.
 
 The configuration output should contain `workspace-archive-manager` and `ui-workspace-archive-manager`. Restart DSH Web and hard-refresh the browser. Do not copy client files manually: the Settings page and archive menu need the mounted plugin.
 

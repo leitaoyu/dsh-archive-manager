@@ -1,5 +1,5 @@
 {
-  "name": "@ggtec528/dsh-archive-manager",
+  "name": "@leitaoy/dsh-archive-manager",
   "version": "0.1.18",
   "description": "NPM-installable DSH Web plugin for managing archived sessions.",
   "type": "module",
